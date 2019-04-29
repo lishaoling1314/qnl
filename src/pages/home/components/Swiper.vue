@@ -21,10 +21,10 @@ export default {
         },
         swiperList:[{
             id:'0001',
-            imgUrl:'@/assets/images/banner1.jpg',
+            imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/banner1.jpg',
         },{
             id:'0002',
-            imgUrl:'@/assets/images/banner2.jpg',
+            imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/banner2.jpg',
         }]
       }
     }
