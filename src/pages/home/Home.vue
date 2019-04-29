@@ -3,6 +3,7 @@
   <home-header></home-header><!--要加个'-'-->
   <home-swiper></home-swiper>
   <home-icons></home-icons>
+  <home-recommend></home-recommend>
   <div>http://piao.qunar.com/touch/</div>
 </div>
 </template>
@@ -11,17 +12,19 @@
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
+import HomeRecommend from './components/Recommend'
 export default {
     name:'Home',
     components:{
         HomeHeader,
         HomeSwiper,
-        HomeIcons
+        HomeIcons,
+        HomeRecommend
     }
 }
 </script>
 
 <style lang="stylus" scoped>
 .mp-page
-    background-color: #f5f5f5;
+    background-color: #f5f5f5
 </style>

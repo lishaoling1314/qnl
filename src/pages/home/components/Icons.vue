@@ -82,19 +82,25 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~style/varibles.styl'
+.icons
+    overflow:hidden
+    padding:2% 0
+    background:#fff
 .icons >>> .swiper-pagination-bullet-active
     background:rgba(0,175,190,.8)
-.icons >>> swiper-container
+.icons >>> .swiper-pagination
+    bottom:2%
+    left:0
+.icons >>> .swiper-container
     height:0;
     padding-bottom:50%;
-    background:#fff
 .icon
     width:25%;
     height:0;
     float:left;
     text-align:center;
     font-size:0.3rem;
-    padding-bottom:25%
+    padding-bottom:23%
 .icon p
     color:$graycolor
     ellipsis()
