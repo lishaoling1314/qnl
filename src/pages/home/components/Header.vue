@@ -24,7 +24,7 @@ export default {
     background:$bgcolor
     color:#fff
 .header-left
-    width: 0.5rem
+    width: 0.7rem
     float: left
 .back-ico
     text-align:center

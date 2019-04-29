@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="mp-page">
   <home-header></home-header><!--要加个'-'-->
   <home-swiper></home-swiper>
   <home-icons></home-icons>
@@ -21,5 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.mp-page
+    background-color: #f5f5f5;
 </style>
