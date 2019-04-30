@@ -89,7 +89,7 @@ export default {
 .icons >>> .swiper-pagination-bullet-active
     background:rgba(0,175,190,.8)
 .icons >>> .swiper-pagination
-    bottom:2%
+    bottom:1%
     left:0
 .icons >>> .swiper-container
     height:0;
