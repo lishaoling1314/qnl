@@ -59,7 +59,7 @@ export default {
 .weekend li img 
     width:100%
 .weekend li .text
-    padding:5% 2%
+    padding:3% 2%
 .weekend li h3
     font-size:0.32rem
     ellipsis()

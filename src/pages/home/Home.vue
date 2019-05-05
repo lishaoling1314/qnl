@@ -6,6 +6,7 @@
   <home-recommend></home-recommend>
   <home-weekend></home-weekend>
   <div>http://piao.qunar.com/touch/</div>
+  <div>7.8</div>
 </div>
 </template>
 
