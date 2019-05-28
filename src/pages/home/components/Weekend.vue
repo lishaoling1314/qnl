@@ -2,7 +2,7 @@
     <div class="weekend">
         <div class="title">热销推荐</div>
         <ul>
-            <li v-for="wk of weekList" :key="wk.id">
+            <li v-for="wk of list" :key="wk.id">
                 <img :src="wk.imgUrl">
                 <div class="text">
                     <h3>{{wk.desc}}</h3>
@@ -16,33 +16,11 @@
 <script>
 export default {
     name:'Homeweekend',
+    props:{
+        list:Array
+    },
     data(){
         return{
-            weekList:[{
-                id:'0001',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/list5.jpg',
-                desc:'长隆野生动物世界',
-                text:'熊猫三胞胎与您共享欢乐时光熊猫三胞胎与您共享欢乐时光',
-                price:'269'
-            },{
-                id:'0002',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/list6.jpg',
-                desc:'长隆野生动物世界',
-                text:'熊猫三胞胎与您共享欢乐时光熊猫三胞胎与您共享欢乐时光',
-                price:'269'
-            },{
-                id:'0003',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/list5.jpg',
-                desc:'长隆野生动物世界',
-                text:'熊猫三胞胎与您共享欢乐时光熊猫三胞胎与您共享欢乐时光',
-                price:'269'
-            },{
-                id:'0004',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/list6.jpg',
-                desc:'长隆野生动物世界',
-                text:'熊猫三胞胎与您共享欢乐时光熊猫三胞胎与您共享欢乐时光',
-                price:'269'
-            }]
         }
     }
 }

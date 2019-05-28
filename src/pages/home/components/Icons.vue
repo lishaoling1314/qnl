@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showIcons">
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon" v-for="icon of page" :key="icon.id">
                     <div class="icon-img"><img :src="icon.imgUrl" alt=""></div>
@@ -14,60 +14,23 @@
 
 <script>
 export default {
+    name:'HomeIcons',
+    props:{
+        list:Array
+    },
     data(){
         return {
             swiperOption: {
                 pagination: '.swiper-pagination',
                 loop:true
-            },
-            iconList:[{
-                id:'0001',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico1.png',
-                desc:'景点门票'
-            },{
-                id:'0002',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico2.png',
-                desc:'广州必游'
-            },{
-                id:'0003',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico3.png',
-                desc:'动植物园'
-            },{
-                id:'0004',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico4.png',
-                desc:'自然风光'
-            },{
-                id:'0005',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico5.png',
-                desc:'珠江夜游'
-            },{
-                id:'0006',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico6.png',
-                desc:'泡温泉'
-            },{
-                id:'0007',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico7.png',
-                desc:'一日游'
-            },{
-                id:'0008',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico8.png',
-                desc:'长隆度假区'
-            },{
-                id:'0009',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico7.png',
-                desc:'一日游'
-            },{
-                id:'00010',
-                imgUrl:'https://lishaoling1314.github.io/qnl/src/assets/images/home-ico8.png',
-                desc:'长隆度假区'
-            }]
+            }
         }
     },
     computed:{
         /******几个图标数据,每一个轮播8个,计算出有几个轮播*****/
         pages(){
             const pages=[]
-            this.iconList.forEach((item,index)=>{
+            this.list.forEach((item,index)=>{
                 const page=Math.floor(index/8)
                 if(!pages[page]){
                     pages[page]=[]
@@ -75,7 +38,11 @@ export default {
                 pages[page].push(item)
             })
             return pages
+        },
+        showIcons(){
+            return this.list.length
         }
+        
     }
 }
 </script>
