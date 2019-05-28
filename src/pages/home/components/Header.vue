@@ -5,7 +5,9 @@
             <span class="iconfont search-ico">&#xe632;</span>
             <input type="text" placeholder="请输入城市/景点/游玩主题">
         </div>
-        <div class="header-right">{{this.city}}<span class="iconfont arrow-ico">&#xe64a;</span></div>
+        <router-link to='/city'>
+            <div class="header-right">{{this.city}}<span class="iconfont arrow-ico">&#xe64a;</span></div>
+        </router-link>
     </div>
 </template>
 
@@ -23,9 +25,9 @@ export default {
 @import '~style/varibles.styl'
 .header
     display:flex
-    line-height:.8rem
+    line-height:$headerheight
     background:$bgcolor
-    color:#fff
+    color:$whitecolor
 .header-left
     width: 0.7rem
     float: left
@@ -34,7 +36,7 @@ export default {
     font-size:0.3rem
 .header-input
     flex:1
-    background:#fff
+    background:$whitecolor
     border-radius:.1rem
     margin-top :1%
     height:.65rem
@@ -47,6 +49,7 @@ export default {
     width: 1rem
     float: right
     text-align:center
+    color:$whitecolor
 .arrow-ico
     margin-left:0.05rem
     font-size:0.18rem
