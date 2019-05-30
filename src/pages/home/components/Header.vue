@@ -41,7 +41,9 @@ export default {
     margin-top :1%
     height:.65rem
     line-height:.55rem
-    padding-left :.1rem
+    padding-left :2%
+.header-input input
+    width:90%
 .search-ico
     color:#ccc
     font-size:.25rem
