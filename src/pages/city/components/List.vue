@@ -10,45 +10,15 @@
             <div class="area">
                 <h3>热门城市</h3>
                 <ul class="mp-list">
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
+                    <li v-for="item of hot" :key="item.id">{{item.name}}</li>
                 </ul>
             </div>
-            <div class="area">
-                <h3>A</h3>
+            <div class="area" v-for="(item,key) of cities" :key="key"><!--v-for="{数组,对象,数字} of cities"-->
+                <h3>{{key}}</h3>
                 <ul class="local-list">
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
+                    <li v-for="i of item" :key="i.id">{{i.name}}</li>
                 </ul>
-            </div>
-            <div class="area">
-                <h3>B</h3>
-                <ul class="local-list">
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                    <li>北京</li>
-                    <li>西安</li>
-                    <li>三亚</li>
-                </ul>
-            </div>      
+            </div>    
         </div>
     </div>
 </template>
@@ -57,6 +27,10 @@
 import Bscroll from 'better-scroll'
 export default {
     name:'CityList',
+    props:{
+        hot:Array,
+        cities:{},
+    },
     mounted(){
         this.scroll=new Bscroll(this.$refs.wrapper)
     }
