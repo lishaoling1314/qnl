@@ -13,7 +13,12 @@
                     <li v-for="item of hot" :key="item.id">{{item.name}}</li>
                 </ul>
             </div>
-            <div class="area" v-for="(item,key) of cities" :key="key"><!--v-for="{数组,对象,数字} of cities"-->
+            <div 
+                class="area" 
+                v-for="(item,key) of cities" 
+                :key="key"
+                :ref="key"
+            ><!--v-for="{数组,对象,数字} of cities"-->
                 <h3>{{key}}</h3>
                 <ul class="local-list">
                     <li v-for="i of item" :key="i.id">{{i.name}}</li>
@@ -28,11 +33,27 @@ import Bscroll from 'better-scroll'
 export default {
     name:'CityList',
     props:{
-        hot:Array,
+        hot:Array,//热门城市
         cities:{},
+        letter:String
+    },
+    mothods:{
+        handleletterClick(e){
+            this.$emit('change',e.target.innerText) //$emit触发当前数据传递给父值
+        }
     },
     mounted(){
-        this.scroll=new Bscroll(this.$refs.wrapper)
+        this.scroll=new Bscroll(this.$refs.wrapper) //better-sccroll插件
+    },
+    watch:{//watch监听
+      letter(){
+        //当点击哪个字母就显示哪块
+        if(this.letter){//当letter
+            const element=this.$refs[this.letter][0];//获取出来是个数组，所以加个［0］就取出第一个值
+            //console.log(element);
+            this.scroll.scrollToElement(element)
+        }
+      }
     }
 }
 </script>

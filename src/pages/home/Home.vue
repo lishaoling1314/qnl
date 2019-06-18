@@ -6,7 +6,7 @@
   <home-recommend :list="recommendList"></home-recommend>
   <home-weekend :list="weekendList"></home-weekend>
   <div>http://piao.qunar.com/touch/</div>
-  <div>8.4</div>
+  <div>8.6</div>
 </div>
 </template>
 

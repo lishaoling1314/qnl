@@ -2,23 +2,24 @@
     <div>
         <city-header></city-header>
         <city-search></city-search>
-        <city-list :hot="hotCities" :cities="cities"></city-list>
-        <city-alphabet :cities="cities"></city-alphabet>
+        <city-list :hot="hotCities" :cities="cities" :letter="letter"></city-list>
+        <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
 import CityAlphabet from './components/Alphabet'
-import axios from 'axios'
 export default {
     name:'City',
     data(){
         return{
             hotCities:[],
-            cities:[]
+            cities:[],
+            letter:""
         }
     },
     components:{
@@ -39,6 +40,10 @@ export default {
                 this.hotCities=data.hotCities
                 this.cities=data.cities
             }
+        },
+        /**排序需要用到**/
+        handleLetterChange(letter){
+            this.letter=letter
         }
     },
     mounted(){
