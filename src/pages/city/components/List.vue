@@ -4,13 +4,19 @@
             <div class="area">
                 <h3>您的位置</h3>
                 <ul class="mp-list">
-                    <li>北京</li>
+                    <li>{{this.$store.state.city}}</li>
                 </ul>
             </div>
             <div class="area">
                 <h3>热门城市</h3>
                 <ul class="mp-list">
-                    <li v-for="item of hot" :key="item.id">{{item.name}}</li>
+                    <li
+                    v-for="item of hot"
+                    :key="item.id"
+                    @click="handleCityClick(item.name)"
+                    >
+                    {{item.name}}
+                    </li>
                 </ul>
             </div>
             <div 
@@ -21,7 +27,13 @@
             ><!--v-for="{数组,对象,数字} of cities"-->
                 <h3>{{key}}</h3>
                 <ul class="local-list">
-                    <li v-for="i of item" :key="i.id">{{i.name}}</li>
+                    <li 
+                    v-for="i of item" 
+                    :key="i.id"
+                    @click="handleCityClick(i.name)"
+                    >
+                    {{i.name}}
+                    </li>
                 </ul>
             </div>    
         </div>
@@ -37,13 +49,11 @@ export default {
         cities:{},
         letter:String
     },
-    mothods:{
-        handleletterClick(e){
-            this.$emit('change',e.target.innerText) //$emit触发当前数据传递给父值
+    methods:{
+        handleCityClick(city){
+            this.$store.commit('changeCity',city)/**这里vuex本来用dispatch,现改成commit**/
+            this.$router.push('/')/****用路由器点击返回首页****/
         }
-    },
-    mounted(){
-        this.scroll=new Bscroll(this.$refs.wrapper) //better-sccroll插件
     },
     watch:{//watch监听
       letter(){
@@ -54,7 +64,10 @@ export default {
             this.scroll.scrollToElement(element)
         }
       }
-    }
+    },
+    mounted(){
+        this.scroll=new Bscroll(this.$refs.wrapper) //better-sccroll插件
+    },
 }
 </script>
 
@@ -63,10 +76,12 @@ export default {
 .list
     overflow:hidden
     position:absolute
+    max-width:720px;
     top:1.5rem
     left:0
     right:0
     bottom:0
+    margin:0 auto
 .area h3
     line-height:.6rem
     padding:0 .2rem

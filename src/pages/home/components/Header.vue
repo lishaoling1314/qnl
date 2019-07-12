@@ -6,21 +6,18 @@
             <input type="text" placeholder="请输入城市/景点/游玩主题">
         </div>
         <router-link to='/city'>
-            <div class="header-right">{{this.city}}<span class="iconfont arrow-ico">&#xe64a;</span></div>
+            <div class="header-right">{{this.$store.state.city}}<span class="iconfont arrow-ico">&#xe64a;</span></div>
         </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name:'HomeHeader',
-    props:{
-        city:String
-    }
+    name:'HomeHeader'
 }
 </script>
 
-<!---43px=.86rem-->
+
 <style lang="stylus" scoped>
 @import '~style/varibles.styl'
 .header
@@ -48,7 +45,7 @@ export default {
     color:#ccc
     font-size:.25rem
 .header-right
-    width: 1rem
+    width: 1.5rem
     float: right
     text-align:center
     color:$whitecolor

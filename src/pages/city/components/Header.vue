@@ -5,17 +5,14 @@
         </router-link>
         <div class="title">城市选择</div>
         <div class="city-container">
-            
         </div>
     </div>
 </template>
-
 <script>
 export default {
     name:'CityHeader'
 }
 </script>
-
 <style lang="stylus" scoped>
 @import '~style/varibles.styl'
 .header

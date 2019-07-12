@@ -1,12 +1,12 @@
 <template>
 <div class="mp-page">
-  <home-header :city="city"></home-header><!--要加个'-'-->
+  <home-header></home-header><!--要加个'-'-->
   <home-swiper :list="swiperList"></home-swiper>
   <home-icons :list="iconList"></home-icons>
   <home-recommend :list="recommendList"></home-recommend>
   <home-weekend :list="weekendList"></home-weekend>
   <div>http://piao.qunar.com/touch/</div>
-  <div>8.6</div>
+  <div>9.1</div>
 </div>
 </template>
 
@@ -28,7 +28,6 @@ export default {
     },
     data(){
         return{
-            city:'',
             swiperList:[],
             iconList:[],
             recommendList:[],
@@ -44,7 +43,6 @@ export default {
             res=res.data
             if(res.ret && res.data){
                 const data=res.data
-                this.city=data.city
                 this.swiperList=data.swiperList
                 this.iconList=data.iconList
                 this.recommendList=data.recommendList

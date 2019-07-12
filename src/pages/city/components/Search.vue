@@ -5,7 +5,14 @@
         </div>
         <div class="search-content" ref="search" v-show="keyword">
             <ul>
-                <li class="search-item" v-for="item of list" :key="item.id">{{item.name}}</li>
+                <li 
+                class="search-item" 
+                v-for="item of list" 
+                :key="item.id"
+                @click="handleCityClick(item.name)"
+                >
+                {{item.name}}
+                </li>
                 <li class="search-item" v-show="!list.length">
                     没有相关匹配数据
                 </li><!--加上这条是为了优化,当list长度为0时,则显示这条小提示-->
@@ -19,7 +26,13 @@ import Bscroll from "better-scroll"
 export default {
     name:'CitySearch',
     props:{
-        cities:Object
+        cities:""
+    },
+    methods:{
+        handleCityClick(city){
+            this.$store.commit('changeCity',city)/**这里vuex本来用dispatch,现改成commit**/
+            this.$router.push('/')/****用路由器点击返回首页****/
+        }
     },
     data(){
         return{
