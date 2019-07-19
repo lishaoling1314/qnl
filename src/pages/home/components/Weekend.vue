@@ -1,8 +1,11 @@
 <template>
     <div class="weekend">
-        <div class="title">热销推荐</div>
+        <div class="title">周末去哪儿</div>
         <ul>
-            <li v-for="wk of list" :key="wk.id">
+            <li
+            v-for="wk of list" 
+            :key="wk.id"
+            >
                 <img :src="wk.imgUrl">
                 <div class="text">
                     <h3>{{wk.desc}}</h3>

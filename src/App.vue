@@ -12,4 +12,5 @@ export default {
 
 <style>
 #app{ max-width:720px; min-width: 320px; margin:0 auto;}
+img{ width: 100%}
 </style>

@@ -1,6 +1,6 @@
 <template>
 <div class="wrapper">
-  <swiper :options="swiperOption" v-if="showSwiper"><!--不加v-if的话swiper打开会默认显示最后一张-->
+  <swiper :options="swiperOptions" v-if="showSwiper"><!--不加v-if的话swiper打开会默认显示最后一张-->
         <!-- slides -->
         <swiper-slide v-for="item of list" :key="item.id">
             <img :src="item.imgUrl"/>
@@ -19,11 +19,10 @@ export default {
     },
     data() {
       return {
-        swiperOption: {
+        swiperOptions: {
             pagination: '.swiper-pagination',
             loop:true,
             autoplay:3000,
-
         }
       }
     },

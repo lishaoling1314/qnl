@@ -2,14 +2,18 @@
     <div class="recommend">
         <div class="title">热销推荐</div>
         <ul>
-            <li v-for="rd of list" :key="rd.id">
+            <router-link tag="li"
+            :to="'/detail/' + rd.id"
+            v-for="rd of list" 
+            :key="rd.id"
+            >
                 <img :src="rd.imgUrl">
                 <span>
                     <h3>{{rd.title}}</h3>
                     <p>{{rd.desc}}</p>
                     <i><font>¥<em>{{rd.price}}</em></font>起</i>
                 </span>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
