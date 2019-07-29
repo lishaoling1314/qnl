@@ -1,31 +1,35 @@
 <template>
     <div class="header">
         <router-link to="/">
-            <div class="iconfont back-ico">&#xe605;</div>
+            <div class="header-left"><div class="iconfont back-ico">&#xe605;</div></div>
         </router-link>
+        <div class="title">厦门科技馆</div>
     </div>
 </template>
 <script>
 export default {
-    name:'DetailHeader'
+    name:'CityHeader'
 }
 </script>
 <style lang="stylus" scoped>
 @import '~style/varibles.styl'
 .header
-    width:100%
-    padding:2% 0
-    position:absolute
-    top:0
-    left:0
-    z-index:2
-.back-ico
-    display: block
-    width: .72rem
-    line-height: .72rem
+    line-height:$headerheight
+    background:$bgcolor
     color:$whitecolor
-    font-size:0.4rem
-    background:rgba(0,0,0,0.5)
-    border-radius 50%
+    position:relative
+.header-left
+    width: 0.7rem
+    float: left
+    position:absolute
+    left:0
+    top:0
+    color:$whitecolor
+.header .title
+    flex-grow:1
     text-align:center
+    font-size:.32rem
+.back-ico
+    text-align:center
+    font-size:0.3rem
 </style>
